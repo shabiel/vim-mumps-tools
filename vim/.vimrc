@@ -1,5 +1,6 @@
 " Author: Sam Habiel; parts inspired by David Wicksell
 " License: AGPL
+" Date: 2011 November 5
 
 " Turn on Syntax Highlighting
 syntax on
@@ -11,20 +12,16 @@ au! BufRead,BufNewFile *.m  setfiletype mumps
 au! BufRead,BufNewFile *.ro setfiletype mumps
 augroup END
 
-" Mumps Goto File. Doesn't work!!!
-function! MumpsGF()
- let l:file = tr(expand("<cfile>"),"%","_")
- execute "set suffixesadd=.m"
- execute "new %:p:h/".l:file
-endfunction
-
 " Open mumps files (only if filetype is mumps)
-au filetype mumps nmap gf :vsp %:p:h/<cfile><CR>
-au filetype mumps noremap gf F^bywf^w<C-W>fgg/^<C-R>"<CR>
-au filetype mumps set suffixesadd=.m
-
+" au filetype mumps nmap gf :vsp %:p:h/<cfile><CR>
+au filetype mumps noremap gf F^bywf^w<C-W>fgg/^<C-R>"<CR>           
+au filetype mumps set suffixesadd=.m                               " Routine names end with .m 
+au filetype mumps set includeexpr=substitute(v:fname,'\%','_','g') " Translate % to _
+au filetype mumps map G <nop>       " Unmap G as I type it all the time by mistake.
+au filetype mumps nmap GG <C-End>   " Instead of G, use GG to jump to the end. Almost the same.
+au filetype mumps nmap GF gf        " And map GF to its lower case equivalent
 " Remove comma as a valid file name b/c in includes D ^XUP,PSS^DEE as one.
-set isfname=@,48-57,/,.,-,_,+,#,$,%,~,=
+au filetype mumps set isfname=@,48-57,/,.,-,_,+,#,$,%,~,=
 
 " Omni complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
