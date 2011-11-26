@@ -27,3 +27,6 @@ Move the commands in the .vim/ folder to your .vim folder (in your home director
 
 Questions?
 comp.lang.mumps
+
+A different set of tools is provided by David Wicksell here:
+  https://bitbucket.org/dlw/m-tools
