@@ -1,24 +1,20 @@
 VIM Mumps Toolkit
 
-License: AGPL.
+License: AGPL
 
 What is this?
 This kit provides:
 - Syntax Highlighting (automatic when you use supplied .vimrc)
-- ctags functionality (using traditional ctags keys CTRL-T and CTRL-]) to jump to routine references.
-- Global dumps from within vim (using CTRL-K)
-- Goto File functionality for Mumps (using gf) to jump to routine references.
+- Goto File functionality for Mumps (using gf) to jump to routine references
 
 Authors:
 -- Jim Self
--- David Wicksell
 -- Sam Habiel
 
-How to Install VIM Mumps toolkit by Sam Habiel
+How to Install VIM Mumps toolkit
 
-1. Put KBAWDUMP.m (from p directory) into one of your routine directories in GT.M.
-2. Move the commands in the .vimrc to your .vimrc (in your home directory), or, if you wish, move the file whole, overwriting yours!
-3. Move the commands in the .vim/ folder to your .vim folder (in your home directory), or alternately the whole files. Here they are:
+Move the commands in the .vimrc to your .vimrc (in your home directory), or, if you wish, move the file whole, overwriting yours!
+Move the commands in the .vim/ folder to your .vim folder (in your home directory), or alternately the whole files. Here they are:
 
  .vim/scripts.vim
  .vim/filetype.vim
@@ -27,14 +23,7 @@ How to Install VIM Mumps toolkit by Sam Habiel
  mumps.vim
 
  .vim/scripts:
- m-gdump.vim
- m-datetime.vim
- m-ctags.vim
  m-setpath.vim
-
- .vim/plugins:
-
-4. If you wish to use ctags functionality, run m-ctags.sh with flag -w. Takes a long while to run. An example script run_m-ctags.sh is supplied for a cron job.
 
 Questions?
 comp.lang.mumps

@@ -63,14 +63,6 @@ set tags+=~/tags,~/.tags
 
 source ~/.vim/scripts/m-ctags.vim
 source ~/.vim/scripts/m-gdump.vim
-source ~/.vim/scripts/m-datetime.vim
 source ~/.vim/scripts/m-setpath.vim
 
-autocmd BufEnter *.m call MapTags()
-autocmd BufEnter *.m call GlobalDump()
-autocmd BufEnter *.m call ZWRCommand()
 autocmd BufEnter *.m call SetMumpsRoutinesPath()
-autocmd BufLeave *.m call UnmapTags()
-autocmd BufLeave *.m call UnGlobalDump()
-autocmd BufLeave *.m call UnZWRCommand()
-autocmd BufWrite *.m call DateTime()
