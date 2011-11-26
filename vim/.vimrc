@@ -61,8 +61,6 @@ set softtabstop=4
 set shiftwidth=4
 set tags+=~/tags,~/.tags
 
-source ~/.vim/scripts/m-ctags.vim
-source ~/.vim/scripts/m-gdump.vim
 source ~/.vim/scripts/m-setpath.vim
 
 autocmd BufEnter *.m call SetMumpsRoutinesPath()
